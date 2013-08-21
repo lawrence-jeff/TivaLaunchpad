@@ -117,64 +117,19 @@ const uint8_t g_pui8HIDInEndpoint[HIDINENDPOINT_SIZE] =
 //*****************************************************************************
 static const uint8_t g_pui8CustomHidReportDescriptor[] =
 {
-    UsagePage(USB_HID_GENERIC_DESKTOP),
-    Usage(USB_HID_MOUSE),
-    Collection(USB_HID_APPLICATION),
-        Usage(USB_HID_POINTER),
-        Collection(USB_HID_PHYSICAL),
-
-            //
-            // The buttons.
-            //
-            UsagePage(USB_HID_BUTTONS),
-            UsageMinimum(1),
-            UsageMaximum(3),
-            LogicalMinimum(0),
-            LogicalMaximum(1),
-
-            //
-            // 3 - 1 bit values for the buttons.
-            //
-            ReportSize(1),
-            ReportCount(3),
-            Input(USB_HID_INPUT_DATA | USB_HID_INPUT_VARIABLE |
-                  USB_HID_INPUT_ABS),
-
-            //
-            // 1 - 5 bit unused constant value to fill the 8 bits.
-            //
-            ReportSize(5),
-            ReportCount(1),
-            Input(USB_HID_INPUT_CONSTANT | USB_HID_INPUT_ARRAY |
-                  USB_HID_INPUT_ABS),
-
-            //
-            // The X and Y axis.
-            //
-            UsagePage(USB_HID_GENERIC_DESKTOP),
-            Usage(USB_HID_X),
-            Usage(USB_HID_Y),
-            LogicalMinimum(-127),
-            LogicalMaximum(127),
-
-            //
-            // 2 - 8 bit Values for x and y.
-            //
-            ReportSize(8),
-            ReportCount(2),
-            Input(USB_HID_INPUT_DATA | USB_HID_INPUT_VARIABLE |
-                  USB_HID_INPUT_RELATIVE),
-
-            //
-            // 2 - 8 bit Values for x and y.  // Padding
-            //
-            ReportSize(8),
-            ReportCount(CUSTOMHID_REPORT_SIZE - 3),
-            Input(USB_HID_INPUT_CONSTANT | USB_HID_INPUT_ARRAY |
-                  USB_HID_INPUT_ABS),
-
-        EndCollection,
-    EndCollection,
+	    UsagePage(USB_HID_CONSUMER_DEVICE),
+		Usage(USB_HID_USAGE_CONSUMER_CONTROL),
+			Collection(USB_HID_APPLICATION),
+				LogicalMinimum(0),
+				LogicalMaximum(1),
+				Usage(USB_HID_VOLUME_UP),
+				Usage(USB_HID_VOLUME_DOWN),
+				ReportSize(1),
+				ReportCount(2),
+				Input(USB_HID_INPUT_DATA | USB_HID_INPUT_VARIABLE | USB_HID_INPUT_RELATIVE),
+				ReportCount(6),
+				Input(USB_HID_INPUT_CONSTANT | USB_HID_INPUT_ARRAY | USB_HID_INPUT_ABS),
+			EndCollection,
 };
 
 //*****************************************************************************

@@ -61,7 +61,7 @@ extern "C"
 // The size of the customhid input report sent to the host.
 //
 //*****************************************************************************
-#define CUSTOMHID_REPORT_SIZE       3
+#define CUSTOMHID_REPORT_SIZE       1
 
 //*****************************************************************************
 //

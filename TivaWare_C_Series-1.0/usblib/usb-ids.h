@@ -19,6 +19,7 @@
 // DAMAGES, FOR ANY REASON WHATSOEVER.
 // 
 // This is part of revision 1.0 of the Tiva USB Library.
+// Added Gamepad definition - jeff Lawrence
 //
 //*****************************************************************************
 
@@ -49,6 +50,7 @@
 #define USB_PID_COMP_HID_SER    0x0009
 #define USB_PID_COMP_HID_DFU    0x000A
 #define USB_PID_DATA_LOGGER     0x000B
+#define USB_PID_GAMEPAD         0x000C
 #define USB_PID_COMP_HID_HID    0x000D
 #define USB_PID_DFU             0x00FF
 
